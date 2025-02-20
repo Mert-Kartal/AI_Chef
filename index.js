@@ -23,11 +23,6 @@ app.get(`/`, (req, res) => {
     res.send(`Yemek Tarifleri AI uygulaması ${port} portunda çalışıyor`)
 })
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-
-})
-
 app.post(`/auth/signup`, async (req, res) => {
 
     const { name, email, password } = req.body;
@@ -248,4 +243,8 @@ app.get(`/users/recipes/:userId`, async (req, res) => {
             message: 'Kullanıcı tariflerini çekerken bir hata oluştu.'
         });
     }
+})
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 })
